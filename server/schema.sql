@@ -1,23 +1,20 @@
--- CREATE DATABASE chat1;
+CREATE DATABASE chat;
 
-USE chat1;
+USE chat;
 
 CREATE TABLE users (
   id integer primary key,
-
   username text
 );
 
 CREATE TABLE rooms (
   id integer primary key,
-  -- PRIMARY KEY (id),
   roomname text
 );
 
 CREATE TABLE messages (
-  id integer, 
-  PRIMARY KEY (id),
-  content text,
+  id integer primary key, 
+  message text,
   users_username integer,
   rooms_roomname integer, 
   FOREIGN KEY (users_username)
