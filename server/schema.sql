@@ -3,17 +3,17 @@ CREATE DATABASE chat;
 USE chat;
 
 CREATE TABLE users (
-  id integer primary key,
+  id integer primary key auto_increment,
   username text
 );
 
 CREATE TABLE rooms (
-  id integer primary key,
+  id integer primary key auto_increment,
   roomname text
 );
 
 CREATE TABLE messages (
-  id integer primary key, 
+  id integer primary key auto_increment, 
   message text,
   users_username integer,
   rooms_roomname integer, 

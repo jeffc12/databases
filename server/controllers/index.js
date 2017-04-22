@@ -9,7 +9,10 @@ module.exports = {
   users: {
     // Ditto as above
     get: function (req, res) {},
-    post: function (req, res) {}
+    post: function (req, res) {
+    	//console.log(req);
+    	models.users.post(req, res);
+    }
   }
 };
 
