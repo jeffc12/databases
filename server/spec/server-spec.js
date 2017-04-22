@@ -30,13 +30,14 @@ describe('Persistent Node Chat Server', function() {
 
   it('Should insert posted messages to the DB', function(done) {
     // Post the user to the chat server.
-    console.log('hi');
+    
     request({
       method: 'POST',
       uri: 'http://127.0.0.1:3000/classes/users',
       json: { username: 'Valjean' }
     }, function () {
       // Post a message to the node chat server:
+      console.log('post2');
       request({
         method: 'POST',
         uri: 'http://127.0.0.1:3000/classes/messages',
@@ -48,13 +49,14 @@ describe('Persistent Node Chat Server', function() {
       }, function () {
         // Now if we look in the database, we should find the
         // posted message there.
-
+        console.log('expected');
         // TODO: You might have to change this test to get all the data from
         // your message table, since this is schema-dependent.
         var queryString = 'SELECT * FROM messages';
         var queryArgs = [];
 
         dbConnection.query(queryString, queryArgs, function(err, results) {
+          console.log(results);
           // Should have one result:
           expect(results.length).to.equal(1);
 
